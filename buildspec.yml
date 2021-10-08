@@ -12,15 +12,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:dev .
-      - docker tag $REPOSITORY_URI:dev $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push $REPOSITORY_URI:dev
-      - echo Writing image definitions file...
-      - printf '[{"name":"user-portal-sso-integration-container","imageUri":"%s"}]' $REPOSITORY_URI:dev > imagedefinitions.json
-artifacts:
-    files: imagedefinitions.json
