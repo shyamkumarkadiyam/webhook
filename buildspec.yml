@@ -5,7 +5,6 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - echo Build completed on `date`
   build:
     commands:
       - echo Build started on `date`
