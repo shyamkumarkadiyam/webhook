@@ -1,15 +1,13 @@
 version: 0.2
 
-env:
-  shell: bash
 
 phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws --version
-      - echo "LANG=en_US.utf-8" >> /etc/environment
-      - echo "LC_ALL=en_US.utf-8" >> /etc/environment
+      - export LC_ALL="en_US.UTF-8"
+      - locale-gen en_US en_US.UTF-8
+      - dpkg-reconfigure --frontend=noninteractive locales
       - source /etc/environment
   build:
     commands:
