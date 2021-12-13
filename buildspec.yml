@@ -7,7 +7,7 @@ phases:
       - aws --version
       - echo "LANG=en_US.utf-8" >> /etc/environment
       - echo "LC_ALL=en_US.utf-8" >> /etc/environment
-      - source /etc/environment
+      - /bin/bash source /etc/environment
   build:
     commands:
       - echo Build started on `date`
