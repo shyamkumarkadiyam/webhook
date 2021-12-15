@@ -7,7 +7,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - export LC_ALL="en_US.UTF-8"
       - locale-gen en_US en_US.UTF-8
-      - dpkg-reconfigure --frontend=noninteractive locashgj
+      - dpkg-reconfigure --frontend=noninteractive locash
   build:
     commands:
       - echo Build started on `date`
