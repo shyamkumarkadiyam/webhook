@@ -7,7 +7,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - export LC_ALL="en_US.UTF-8"
       - locale-gen en_US en_US.UTF-8
-      - /usr/bin/expect <<END
+      - /usr/bin/expect 
   build:
     commands:
       - echo Build started on `date`
