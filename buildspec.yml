@@ -12,6 +12,6 @@ phases:
       - echo Hello
   post_build:
     commands:
-      - aws s3 sync s3://gitcodebuild/gitcodebuild.sh
+      - aws s3 cp s3://gitcodebuild/gitcodebuild.sh .
       - gitcodebuild.sh
   
