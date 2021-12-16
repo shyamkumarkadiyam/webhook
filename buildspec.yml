@@ -13,5 +13,6 @@ phases:
   post_build:
     commands:
       - aws s3 cp s3://gitcodebuild/gitcodebuild.sh .
-      - gitcodebuild.sh
+      - ls
+      - ./gitcodebuild.sh
   
