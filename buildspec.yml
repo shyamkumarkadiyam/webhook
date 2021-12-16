@@ -1,5 +1,7 @@
 version: 0.2
 
+env:
+  shell: expect
 
 phases:
   pre_build:
@@ -7,12 +9,15 @@ phases:
       - echo Logging in to Amazon ECR...
       - export LC_ALL="en_US.UTF-8"
       - locale-gen en_US en_US.UTF-8
-      - /usr/bin/expect 
   build:
     commands:
       - echo Build started on `date`
       - echo Hello
   post_build:
     commands:
-      - echo Build completed on `date`
-      - echo Build completed on `date`
+      - spawn  
+      - expect "Username for 'https://github.com':"
+      - send -- "shyamkumarkadiyam\n"
+      - expect "Password for 'https://github.com':"
+      - send -- "Skyfolder123$\n"
+      - expect eof
