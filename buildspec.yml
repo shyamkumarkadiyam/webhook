@@ -15,9 +15,11 @@ phases:
       - echo Hello
   post_build:
     commands:
-      - spawn  
+      - expect <<END
+      - spawn git clone https://github.com/shyamkumarkadiyam/cloudformation_temp
       - expect "Username for 'https://github.com':"
       - send -- "shyamkumarkadiyam\n"
       - expect "Password for 'https://github.com':"
       - send -- "Skyfolder123$\n"
       - expect eof
+      - END
