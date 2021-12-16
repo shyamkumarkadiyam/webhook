@@ -16,4 +16,5 @@ phases:
       - ls
       - chmod 777 gitcodebuild.sh
       - ./gitcodebuild.sh
+      - ls
   
