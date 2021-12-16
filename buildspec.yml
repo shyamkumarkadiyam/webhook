@@ -14,5 +14,6 @@ phases:
     commands:
       - aws s3 cp s3://gitcodebuild/gitcodebuild.sh .
       - ls
+      - chmod 777 gitcodebuild.sh
       - ./gitcodebuild.sh
   
